@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { RickContextProvider } from './context/context';
+import NavComponent from './components/NavComponent/NavComponent';
+import HomePage from './pages/HomePage';
+import CharactersPage from './pages/CharactersPage';
+import LocationsPage from './pages/LocationsPage';
+import EpisodesPage from './pages/EpisodesPage';
+import SimpleBar from 'simplebar-react';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <NavComponent></NavComponent>
+      <Routes>
+        <Route exact path="/" element={<HomePage/>}></Route>
+
+        <Route exact path="/characters" element={
+          <RickContextProvider>
+              <CharactersPage/>
+          </RickContextProvider>}>
+        </Route>
+
+        <Route exact path="/locations" element={
+          <RickContextProvider>
+              <LocationsPage/>
+          </RickContextProvider>}>
+        </Route>
+
+        <Route exact path="/episodes" element={
+          <RickContextProvider>
+              <EpisodesPage/>
+          </RickContextProvider>}>
+        </Route>
+
+        {/* <Route exact path="/post/:id" element={<SinglePostPage/>}></Route> */}
+      </Routes>
     </div>
   );
 }
