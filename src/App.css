@@ -41,3 +41,10 @@ max-height: 60vh;
     transform: rotate(360deg);
   }
 }
+
+.AllCharacters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+

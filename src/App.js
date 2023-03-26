@@ -7,12 +7,19 @@ import CharactersPage from './pages/CharactersPage';
 import LocationsPage from './pages/LocationsPage';
 import EpisodesPage from './pages/EpisodesPage';
 import SimpleBar from 'simplebar-react';
+import SearchComponent from './components/SearchComponent/SearchComponent';
+import PaginationComponent from './components/PaginationComponent/PaginationComponent';
 
 function App() {
+
+
   return (
     <div className="App">
      <NavComponent></NavComponent>
+
+              <SearchComponent/>
       <Routes>
+
         <Route exact path="/" element={<HomePage/>}></Route>
 
         <Route exact path="/characters" element={
