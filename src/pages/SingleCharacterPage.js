@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Container } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 
 export default function SingleCharacterPage(){
@@ -21,12 +22,29 @@ export default function SingleCharacterPage(){
 
 return (
     <div>
-        <button onClick={() => navigate ("/characters")}>
-            GO BACK!
-         </button>
+
         <Container className="SingleCharacters">
-            <h1>{singleCharacter.name}</h1>
-            <img src={singleCharacter.image} alt=""/>
+            <div>
+                <img className="imgSingleCharacter" src={singleCharacter.image} alt=""/>
+            </div>
+            <div>
+
+                    <h1>{singleCharacter.name}</h1>
+
+<p className="status">{singleCharacter.status}</p>
+
+             <div className="details">
+                 <p><strong>Gender:</strong></p>
+                    <p>{singleCharacter.gender}</p>
+                </div>
+                <div className="details">
+                <p><strong>Location:</strong></p>
+                <p>{singleCharacter.location.name}</p>
+                </div> 
+                <p className="btnBack" onClick={() => navigate ("/characters")}>
+                    <BsFillArrowLeftCircleFill/>
+                </p>
+            </div>
         </Container> 
     </div>
     )

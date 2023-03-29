@@ -5,7 +5,6 @@ import { Container } from "react-bootstrap";
 import PaginationComponent from "../components/PaginationComponent/PaginationComponent";
 import 'simplebar-react/dist/simplebar.min.css';
 import { Link } from "react-router-dom";
-import { BsFillEyeFill } from "react-icons/bs";
 
 export default function CharactersPage(){
     const { characters } = useContext (RickContext)
@@ -13,15 +12,14 @@ export default function CharactersPage(){
 return (
     <div>
     <PaginationComponent></PaginationComponent>
-    <SimpleBar style={{ maxHeight: 500 }}>
+    <SimpleBar style={{ maxHeight: 580 }}>
     <Container className="AllCharacters">
         {characters.map((character) => (
             <figure key={character.id}>
                 <img src={character.image} alt="" />
                 <figcaption>
                     <Link to={`/character/${character.id}`}>
-                        {character.name}
-                        {/* <p className="iconDetails"><BsFillEyeFill/></p> */}
+                        <p>{character.name}</p>
                     </Link>
                 </figcaption> 
             </figure>
