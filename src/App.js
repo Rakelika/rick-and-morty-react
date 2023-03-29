@@ -4,20 +4,13 @@ import { RickContextProvider } from './context/context';
 import NavComponent from './components/NavComponent/NavComponent';
 import HomePage from './pages/HomePage';
 import CharactersPage from './pages/CharactersPage';
-import LocationsPage from './pages/LocationsPage';
-import EpisodesPage from './pages/EpisodesPage';
-import SimpleBar from 'simplebar-react';
-import SearchComponent from './components/SearchComponent/SearchComponent';
-import PaginationComponent from './components/PaginationComponent/PaginationComponent';
+import SingleCharacterPage from './pages/SingleCharacterPage';
 
 function App() {
 
-
   return (
     <div className="App">
-     <NavComponent></NavComponent>
-
-              <SearchComponent/>
+     {/* <NavComponent></NavComponent> */}
       <Routes>
 
         <Route exact path="/" element={<HomePage/>}></Route>
@@ -28,19 +21,12 @@ function App() {
           </RickContextProvider>}>
         </Route>
 
-        <Route exact path="/locations" element={
-          <RickContextProvider>
-              <LocationsPage/>
-          </RickContextProvider>}>
-        </Route>
+        <Route exact path="/character/:id" element={
+                    <RickContextProvider>
+        <SingleCharacterPage/>
+        </RickContextProvider>}>
 
-        <Route exact path="/episodes" element={
-          <RickContextProvider>
-              <EpisodesPage/>
-          </RickContextProvider>}>
         </Route>
-
-        {/* <Route exact path="/post/:id" element={<SinglePostPage/>}></Route> */}
       </Routes>
     </div>
   );

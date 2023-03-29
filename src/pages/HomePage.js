@@ -1,10 +1,12 @@
-import { Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage(){
 
+    const navigate = useNavigate ();
+
     return (
-        <Container>
-            <h1>Home page</h1>
-        </Container>
+        <div className="HomePage">
+  <button className="BtnHome" onClick={() => navigate ("/characters")}>GO</button>
+        </div>
     )
 }
