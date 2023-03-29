@@ -22,7 +22,7 @@ export default function SingleCharacterPage(){
 return (
     <div>
         <button onClick={() => navigate ("/characters")}>
-            Volver a personajes
+            GO BACK!
          </button>
         <Container className="SingleCharacters">
             <h1>{singleCharacter.name}</h1>

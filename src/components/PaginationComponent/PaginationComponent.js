@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PaginationComponent.module.css';
 import { RickContext } from '../../context/context';
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
 
 const PaginationComponent = () => {
@@ -18,16 +19,17 @@ const PaginationComponent = () => {
 
 return(
   <div className={styles.PaginationComponent}>
+  <h2>Rick and Morty Characters</h2>
     <nav>
-      <ul className='pagination justify-content-center'>
+      <ul className={styles.paginationCharacters}>
         { infoPage.prev ? (
-        <li className='page-item'>
-          <button className='page-link' onClick={handlePrev}>Anterior</button>
+        <li className={styles.arrowCharacters}>
+          <p className='' onClick={handlePrev}><BsFillArrowLeftCircleFill /></p>
         </li>
         ) : null}
         { infoPage.next ? (
-        <li className='page-item'>
-          <button className='page-link' onClick={handleNext}>Siguiente</button>
+        <li className={styles.arrowCharacters}>
+          <p className='arrowCharacters' onClick={handleNext}><BsFillArrowRightCircleFill/></p>
         </li>
         ) : null}
       </ul>

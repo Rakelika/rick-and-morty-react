@@ -1,1 +1,33 @@
-.PaginationComponent {}
+.PaginationComponent {
+    background-color: #212529;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+    align-items: center;
+    margin-bottom: 40px;
+    height: 80px;
+}
+
+.paginationCharacters {
+    display: flex!important;
+    justify-content: space-between !important;
+    column-gap: 20px;
+}
+
+.arrowCharacters{
+    font-size: 36px !important;
+    list-style: none;
+    color: #A7CB54;
+    cursor: pointer;
+}
+
+.arrowCharacters:hover{
+    font-size: 36px !important;
+    list-style: none;
+    color: #5CAD4A;
+}
+
+ol, ul {
+    padding-left: 0px;
+}
