@@ -29,21 +29,21 @@ return (
             </div>
             <div>
 
-                    <h1>{singleCharacter.name}</h1>
+                <h1>{singleCharacter.name}</h1>
 
-<p className="status">{singleCharacter.status}</p>
+                <p className="status">{singleCharacter.status}</p>
 
-             <div className="details">
-                 <p><strong>Gender:</strong></p>
+                <div className="details">
+                    <p><strong>Gender:</strong></p>
                     <p>{singleCharacter.gender}</p>
                 </div>
                 <div className="details">
-                <p><strong>Location:</strong></p>
-                <p>{singleCharacter.location.name}</p>
+                    <p><strong>Location:</strong></p>
+                    {/* <p>{singleCharacter.location.name}</p> */}
                 </div> 
-                <p className="btnBack" onClick={() => navigate ("/characters")}>
-                    <BsFillArrowLeftCircleFill/>
-                </p>
+                    <p className="btnBack" onClick={() => navigate ("/characters")}>
+                            <BsFillArrowLeftCircleFill/>
+                    </p>
             </div>
         </Container> 
     </div>
